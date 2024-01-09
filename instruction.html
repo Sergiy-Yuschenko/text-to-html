@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/main.css">
+    <title>Парсер тексту в HTML - Інструкція</title>
+</head>
+
+<body>
+    <header class="header">
+        <div class="container">
+            <a href="./" class="logo link"><span class="logo-first">textto</span><span>HTML</span></a>
+            <nav class="site-nav">
+                <a href="./" class="link site-nav__link" rel="noreferrer noopener">
+                    <p class="site-nav__element">На головну</p>
+                </a>
+                <div class="site-nav__element language language-js"><span>Українська</span></div>
+            </nav>
+        </div>
+    </header>
+    <main class="main">
+        <div class="wrapper container">
+            <h1 class="title">texttoHTML Інструкція</h1>
+            <p class="description">
+                texttoHTML це простий веб-додаток, який парсить введений текст з розставленими у відповідних місцях вказівних тегів Та генерує текст вдягнутий в html - теги <b>&#60;p&#62;</b> та <b>&#60;h1&#62; - &#60;h6&#62;</b>.
+                При розпарсюванні текст ділиться на абзаци, при цьому для кожного абзацу враховуються вказівні теги поставлені на на початку абзацу. Далі текст кожного абзацу нормалізується (видаляються зайві пробіли) та вдягається у відповідні html теги: <b>&#60;p&#62;</b>, якщо вказівний тег був <b>&#60;p&#62; - &#60;p5&#62;</b> або <b>&#60;h1&#62; - &#60;h6&#62;</b>, якщо вказівний тег був <b>&#60;h1&#62; - &#60;h6&#62;</b> відповідно. 
+                Якщо на початку абзацу не поставлено жодного вказівного тегу, для нього застосовується вказівний тег <b>&#60;p&#62;</b> по замовчуванню.
+            </p>
+            <p class="description">
+                В додатку є спеціальні поля для введення рядка атрибутів, кожне з яких прив'язане до свого вказівного тегу, і після генерації цей рядок вставляється всередину тих тегів, які огортатимуть абзаци помічені відповідними вказівними тегами.
+            </p>
+            <p class="description"> Поля для введення атрибутів можна заповняти, або залишати порожніми, тоді будуть додаватисмя теги без атрибутів. Також
+            не обов'язково використовувати всі види вказівних тегів, які передбачені з запасом, можна навіть не використовувати
+            жодного з них. Використовуйте лише те що необхідно в даному випадку.</p>
+            <p class="description">
+                <b>Приклади:</b>
+            </p>
+            <p class="description">
+                1&#41; Всі варіанти застосування вказівних тегів без введення полів атрибутів
+            </p>
+            <pre class="description-box"><code>&#60;h1&#62;Заголовок1
+&#60;h2&#62;Заголовок 2
+&#60;h3&#62;Заголовок 3
+&#60;h4&#62;Заголовок 4
+&#60;h5&#62;Заголовок 5
+&#60;h6&#62;Заголовок 6
+
+&#60;p&#62;Просто абзац
+Просто абзац без вказівного тега
+
+&#60;p1&#62; Абзац додаткового типу 1
+&#60;p2&#62; Абзац додаткового типу 2
+&#60;p3&#62; Абзац додаткового типу 3
+&#60;p4&#62; Абзац додаткового типу 4
+&#60;p5&#62; Абзац додаткового типу 5</code></pre>
+            <p class="description">
+                результат:
+            </p>
+            <pre class="description-box">&#60;h1&#62;Заголовок1&#60;/h1&#62;
+&#60;h2&#62;Заголовок 2&#60;/h2&#62;
+&#60;h3&#62;Заголовок 3&#60;/h3&#62;
+&#60;h4&#62;Заголовок 4&#60;/h4&#62;
+&#60;h5&#62;Заголовок 5&#60;/h5&#62;
+&#60;h6&#62;Заголовок 6&#60;/h6&#62;
+&#60;p&#62;Просто абзац&#60;/p&#62;
+&#60;p&#62;Просто абзац без вказівного тега&#60;/p&#62;
+&#60;p&#62;Абзац додаткового типу 1&#60;/p&#62;
+&#60;p&#62;Абзац додаткового типу 2&#60;/p&#62;
+&#60;p&#62;Абзац додаткового типу 3&#60;/p&#62;
+&#60;p&#62;Абзац додаткового типу 4&#60;/p&#62;
+&#60;p&#62;Абзац додаткового типу 5&#60;/p&#62;</code></pre>
+            </p>
+            <p class="description">
+                2&#41; Спрощена структура електронної книги з назвою, ім'ям автора, назвою глави та підзаголовка, абзацом без введення полів атрибутів
+            </p>
+<pre class="description-box"><code>&#60;p1&#62;Автор Книги
+&#60;h1&#62; Назва книги
+&#60;h2&#62;Вступ
+Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt eius commodi architecto tenetur nulla saepe voluptas fuga fugit velit provident!
+&#60;h2&#62; Розділ 1
+&#60;h3&#62; Підрозділ 1
+Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt eius commodi architecto tenetur nulla saepe voluptas fuga fugit velit provident!</code></pre>
+            <p class="description">
+                результат:
+            </p>
+<pre class="description-box"><code>&#60;p&#62;Автор Книги&#60;/p&#62;
+&#60;h1&#62;Назва книги&#60;/h1&#62;
+&#60;h2&#62;Вступ&#60;/h2&#62;
+&#60;p&#62;Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt eius commodi architecto tenetur nulla saepe voluptas fuga fugit velit provident!&#60;/p&#62;
+&#60;h2&#62;Розділ 1&#60;/h2&#62;
+&#60;h3&#62;Підрозділ 1&#60;/h3&#62;
+&#60;p&#62;Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt eius commodi architecto tenetur nulla saepe voluptas fuga fugit velit provident!&#60;/p&#62;</code></pre>
+            <p class="description">
+                2&#41; Те що у попередньому варіанті, але з без введення полів атрибутів<div class=""></div>
+            </p>
+            <img src="./screan-first.png" alt="Скрін з заповненими полями для атрибутів">
+            <p class="description">
+                результат:
+            </p>
+<pre class="description-box"><code>&#60;p class="author"&#62;Автор Книги&#60;/p&#62;
+&#60;h1 class="name-of-the-book"&#62;Назва книги&#60;/h1&#62;
+&#60;h2 class="book-сhapter"&#62;Вступ&#60;/h2&#62;
+&#60;p class="paragraph"&#62;Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt eius commodi architecto tenetur nulla saepe voluptas fuga fugit velit provident!&#60;/p&#62;
+&#60;h2 class="book-сhapter"&#62;Розділ 1&#60;/h2&#62;
+&#60;h3 class="book-subtitle"&#62;Підрозділ 1&#60;/h3&#62;
+&#60;p class="paragraph"&#62;Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt eius commodi architecto tenetur nulla saepe voluptas fuga fugit velit provident!&#60;/p&#62;</code></pre>
+        </div>
+    </main>
+</body>
+
+</html>

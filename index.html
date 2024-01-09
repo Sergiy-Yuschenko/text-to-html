@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/main.css">
+    <title>Генератор субтитрів із тексту з часовими мітками</title>
+</head>
+<body>
+    <header class="header">
+        <div  class="container">
+            <a href="./" class="logo link"><span class="logo-first">textto</span><span>HTML</span></a>
+            <nav class="site-nav">
+                <a href="./instruction.html" class="link site-nav__link">
+                    <p class="site-nav__element">Інструкція</p>
+                </a>
+                <div class="site-nav__element language language-js"><span>Українська</span></div>
+            </nav>
+        </div>  
+    </header>
+    <main class="main">
+        <div class="wrapper container">
+            <h1 class="title">Додаток для генерації HTML коду</h1>
+            <form class="form">
+                <label for="tag-p-base">
+                    <span>Атрибути базового вказівного тага &#60;p&#62; (також абзаца не позначеного вказівним тегом)</p> </span>
+                    <input id="tag-p-base" type="text" name="tag-p-base" />
+                </label>
+                <label for="tag-p-first">
+                    <span>Атрибути першого тага &#60;p1&#62;</span>
+                    <input id="tag-p-first" type="text" name="tag-p-first" />
+                </label>
+                <label for="tag-p-second">
+                    <span>Атрибути другого тага &#60;p2&#62;</span>
+                    <input id="tag-p-second" type="text" name="tag-p-second" />
+                </label>
+                <label for="tag-p-third">
+                    <span>Атрибути третього тага &#60;p3&#62;</span>
+                    <input id="tag-p-third" type="text" name="tag-p-third" />
+                </label>
+                <label for="tag-p-third">
+                    <span>Атрибути четвертого тага &#60;p4&#62;</span>
+                    <input id="tag-p-fourth" type="text" name="tag-p-fourth" />
+                </label>
+                <label for="tag-p-third">
+                    <span>Атрибути п'ятого тага &#60;p5&#62;</span>
+                    <input id="tag-p-fifth" type="text" name="tag-p-fifth" />
+                </label>
+                <label for="tag-h-first">
+                    <span>Атрибути тага &#60;h1&#62;</span>
+                    <input id="tag-h-first" type="text" name="tag-h-first" />
+                </label>
+                <label for="tag-h-second">
+                    <span>Атрибути тага &#60;h2&#62;</span>
+                    <input id="tag-h-second" type="text" name="tag-h-second" />
+                </label>
+                <label for="tag-h-third">
+                    <span>Атрибути тага &#60;h3&#62;</span>
+                    <input id="tag-h-third" type="text" name="tag-h-third" />
+                </label>
+                <label for="tag-h-third">
+                    <span>Атрибути тага &#60;h4&#62;</span>
+                    <input id="tag-h-fourth" type="text" name="tag-h-fourth" />
+                </label>
+                <label for="tag-h-third">
+                    <span>Атрибути тага &#60;h5&#62;</span>
+                    <input id="tag-h-fifth" type="text" name="tag-h-fifth" />
+                </label>
+                <label for="tag-h-sixth">
+                    <span>Атрибути тага &#60;h6&#62;</span>
+                    <input id="tag-h-sixth" type="text" name="tag-h-sixth" />
+                </label>
+                <textarea placeholder="введіть текст з часовими мітками" cols="30" rows="10"
+                    class="textarea-input js-textarea-input"></textarea>
+                <!-- <div class="form__method-wrapper">
+                    <p class="form__format-description js-method-description">Оберіть формат субтитрів:</p>
+                    <div class="form__choice-wrapper">
+                    
+                        <label class="form__format-choice  sbv">
+                            SBV
+                            <input type="radio" name="format" checked class="js-choose-sbv-format">
+                        </label>
+                        <label class="form__format-choice  srt">
+                            SRT
+                            <input type="radio" name="format" class="js-choose-srt-format">
+                        </label>
+                    </div>
+                </div> -->
+                <div class="form__button-choice">
+                    <div class="form__button-wrapper">
+                        <button type="button" class="form__button js-button-start">
+                            Generate
+                        </button>
+                    </div>
+                    <div class="form__button-wrapper">
+                        <button type="button" class="form__button js-button-copy">
+                            Copy
+                        </button>
+                    </div>
+                </div>
+            </form>
+            <div class="textarea-output js-textarea-output">поле згенерованих субтитрів</div>
+        </div>
+    </main>
+ 
+    <script src="parser.js" type="module"></script>
+</body>
+</html>
